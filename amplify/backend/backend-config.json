@@ -1,0 +1,291 @@
+{
+  "api": {
+    "practicegraphqlapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "practicegraphqlapid47914ea"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2025-10-16T10:22:10.152Z",
+                "apiKeyExpirationDays": 30,
+                "description": "dev-testing-key"
+              },
+              "authenticationType": "API_KEY"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authpracticegraphqlapid47914ea"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "practicegraphqlapid47914ea": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "assignUsergroup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "loginUser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "logoutUser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "registerUser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "rotateAllTokens": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "uploadImageOnS3": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_assignUsergroup_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "assignUsergroup"
+        }
+      ]
+    },
+    "AMPLIFY_function_assignUsergroup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "assignUsergroup"
+        }
+      ]
+    },
+    "AMPLIFY_function_assignUsergroup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "assignUsergroup"
+        }
+      ]
+    },
+    "AMPLIFY_function_loginUser_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "loginUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_loginUser_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "loginUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_loginUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "loginUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_loginUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "loginUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_loginUser_userPoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "loginUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_logoutUser_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "logoutUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_logoutUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "logoutUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_logoutUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "logoutUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_registerUser_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "registerUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_registerUser_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "registerUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_registerUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "registerUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_registerUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "registerUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_registerUser_userPoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "registerUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_rotateAllTokens_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rotateAllTokens"
+        }
+      ]
+    },
+    "AMPLIFY_function_rotateAllTokens_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rotateAllTokens"
+        }
+      ]
+    },
+    "AMPLIFY_function_rotateAllTokens_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rotateAllTokens"
+        }
+      ]
+    },
+    "AMPLIFY_function_rotateAllTokens_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rotateAllTokens"
+        }
+      ]
+    },
+    "AMPLIFY_function_uploadImageOnS3_bucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "uploadImageOnS3"
+        }
+      ]
+    },
+    "AMPLIFY_function_uploadImageOnS3_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "uploadImageOnS3"
+        }
+      ]
+    },
+    "AMPLIFY_function_uploadImageOnS3_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "uploadImageOnS3"
+        }
+      ]
+    },
+    "AMPLIFY_function_uploadImageOnS3_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "uploadImageOnS3"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "ddbTable",
+      "environmentVariableName": "DDB_TABLE"
+    }
+  ]
+}

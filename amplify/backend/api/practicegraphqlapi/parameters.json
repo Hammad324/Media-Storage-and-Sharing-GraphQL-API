@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "practicegraphqlapi",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authpracticegraphqlapid47914ea",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2025-09-16T10:22:11.662Z"
+}

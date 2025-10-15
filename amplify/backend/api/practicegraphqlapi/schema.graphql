@@ -1,0 +1,77 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+# input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Mutation {
+  register(input: RegisterInput!): RegisterResult
+    @function(name: "registerUser-${env}")
+    @aws_api_key
+
+  login(input: LoginInput!): LoginResult
+    @function(name: "loginUser-${env}")
+    @aws_api_key
+
+  logout: LogoutResult
+    @function(name: "logoutUser-${env}")
+    @aws_cognito_user_pools
+
+  getUploadUrl(input: GetUploadUrlInput!): GetUploadUrlResult
+    @function(name: "uploadImageOnS3-${env}")
+    @aws_cognito_user_pools
+
+  rotateTokens: RotateTokensResult
+    @function(name: "rotateAllTokens-${env}")
+    @aws_cognito_user_pools
+}
+
+input RegisterInput {
+  username: String!
+  password: String!
+  email: String!
+  # role: String
+}
+
+type RegisterResult @aws_api_key {
+  success: Boolean!
+  message: String
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+type LoginResult @aws_api_key {
+  idToken: String
+  accessToken: String
+  refreshToken: String
+  message: String
+}
+
+type LogoutResult @aws_cognito_user_pools {
+  success: Boolean!
+  message: String
+}
+
+input GetUploadUrlInput {
+  filename: String!
+  contentType: String!
+}
+
+type GetUploadUrlResult @aws_cognito_user_pools {
+  success: Boolean!
+  signedUrl: String
+  fileUrl: String
+  error: String
+}
+
+type RotateTokensResult @aws_cognito_user_pools{
+  idToken: String
+  accessToken: String
+  refreshToken: String
+  message: String
+}
+
+type Query {
+  _dummy: String
+}

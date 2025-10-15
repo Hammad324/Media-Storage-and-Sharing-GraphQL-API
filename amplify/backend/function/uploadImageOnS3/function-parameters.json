@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "bucketName",
+      "environmentVariableName": "BUCKET_NAME"
+    },
+    {
+      "cloudFormationParameterName": "ddbTable",
+      "environmentVariableName": "DDB_TABLE"
+    }
+  ]
+}

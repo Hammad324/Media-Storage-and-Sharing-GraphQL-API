@@ -1,0 +1,17 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "userPoolId",
+      "environmentVariableName": "USER_POOL_ID"
+    },
+    {
+      "cloudFormationParameterName": "clientId",
+      "environmentVariableName": "CLIENT_ID"
+    },
+    {
+      "cloudFormationParameterName": "ddbTable",
+      "environmentVariableName": "DDB_TABLE"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "practicegraphqlapi",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authpracticegraphqlapid47914ea"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 30,
+        "apiKeyExpirationDate": "2025-10-16T10:22:10.152Z",
+        "keyDescription": "dev-testing-key"
+      }
+    ]
+  }
+}
