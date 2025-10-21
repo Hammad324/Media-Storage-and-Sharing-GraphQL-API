@@ -74,9 +74,7 @@
       "service": "Lambda"
     },
     "logoutUser": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "build": true
     },
     "registerUser": {
       "build": true,
@@ -159,6 +157,14 @@
         }
       ]
     },
+    "AMPLIFY_function_logoutUser_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "logoutUser"
+        }
+      ]
+    },
     "AMPLIFY_function_logoutUser_ddbTable": {
       "usedBy": [
         {
@@ -176,6 +182,14 @@
       ]
     },
     "AMPLIFY_function_logoutUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "logoutUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_logoutUser_userPoolId": {
       "usedBy": [
         {
           "category": "function",

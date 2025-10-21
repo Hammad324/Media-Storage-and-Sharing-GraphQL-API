@@ -18,6 +18,12 @@
     },
     "ddbTable": {
       "Type": "String"
+    },
+    "clientId": {
+      "Type": "String"
+    },
+    "userPoolId": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -75,6 +81,12 @@
             },
             "DDB_TABLE": {
               "Ref": "ddbTable"
+            },
+            "CLIENT_ID": {
+              "Ref": "clientId"
+            },
+            "USER_POOL_ID": {
+              "Ref": "userPoolId"
             }
           }
         },
@@ -85,7 +97,6 @@
           ]
         },
         "Runtime": "nodejs22.x",
-        "Layers": [],
         "Timeout": 25
       }
     },

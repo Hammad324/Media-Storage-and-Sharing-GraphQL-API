@@ -32,8 +32,10 @@
         },
         "logoutUser": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/logoutUser-35414730325572364d61-build.zip",
-          "ddbTable": "practicegraphqlapi_table"
+          "s3Key": "amplify-builds/logoutUser-51516d396d4a6a494e52-build.zip",
+          "ddbTable": "practicegraphqlapi_table",
+          "clientId": "7nvmj1alattaeo5i5fb5g7ff7c",
+          "userPoolId": "ap-south-1_IlJBF0QdL"
         },
         "uploadImageOnS3": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
