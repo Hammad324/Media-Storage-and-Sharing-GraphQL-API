@@ -4,6 +4,7 @@ const {
 } = require("@aws-sdk/client-cognito-identity-provider");
 
 const { DynamoDBClient, UpdateItemCommand } = require("@aws-sdk/client-dynamodb");
+const { verifyJwtTokens } = require("/opt/nodejs/verifyJwtUtil");
 
 const client = new CognitoIdentityProviderClient({
   region: process.env.REGION || "us-east-1",
@@ -31,13 +32,20 @@ exports.handler = async (event) => {
     const command = new GlobalSignOutCommand({ AccessToken: accessToken });
     await client.send(command);
 
-    const decoded = decodeJWT(accessToken);
-    const subId = decoded.sub
+    // const decoded = decodeJWT(accessToken);
+    // const subId = decoded.sub
+
+    const verifyToken = await verifyJwtTokens(
+      accessToken,
+      process.env.USER_POOL_ID,
+      process.env.CLIENT_ID,
+      "access"
+    )
 
     await dynamoClient.send(
       new UpdateItemCommand({
         TableName: process.env.DDB_TABLE,
-        Key: { userId: { S: subId } },
+        Key: { userId: { S: verifyToken.sub } },
         UpdateExpression: "SET isActive = :val, updatedAt = :updatedAt",
         ExpressionAttributeValues: {
           ":val": { BOOL: false },
@@ -57,8 +65,8 @@ exports.handler = async (event) => {
   }
 };
 
-function decodeJWT(token) {
-  const payload = token.split(".")[1];
-  return JSON.parse(Buffer.from(payload, "base64").toString("utf-8"));
-}
+// function decodeJWT(token) {
+//   const payload = token.split(".")[1];
+//   return JSON.parse(Buffer.from(payload, "base64").toString("utf-8"));
+// }
 

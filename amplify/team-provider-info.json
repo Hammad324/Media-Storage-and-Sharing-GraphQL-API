@@ -32,7 +32,7 @@
         },
         "logoutUser": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/logoutUser-51516d396d4a6a494e52-build.zip",
+          "s3Key": "amplify-builds/logoutUser-456e496d2f3246514f61-build.zip",
           "ddbTable": "practicegraphqlapi_table",
           "clientId": "7nvmj1alattaeo5i5fb5g7ff7c",
           "userPoolId": "ap-south-1_IlJBF0QdL"
@@ -53,6 +53,10 @@
           "ddbTable": "practicegraphqlapi_table",
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
           "s3Key": "amplify-builds/rotateAllTokens-48627a5a7a6f45613232-build.zip"
+        },
+        "practicegraphqlapijwtVerificationLayer": {
+          "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
+          "s3Key": "amplify-builds/practicegraphqlapijwtVerificationLayer-LambdaLayerVersion6a9b70ba-build.zip"
         }
       },
       "api": {

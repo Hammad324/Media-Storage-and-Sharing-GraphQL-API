@@ -12,5 +12,14 @@
       "cloudFormationParameterName": "userPoolId",
       "environmentVariableName": "USER_POOL_ID"
     }
+  ],
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "practicegraphqlapijwtVerificationLayer",
+      "env": "dev",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
   ]
 }
