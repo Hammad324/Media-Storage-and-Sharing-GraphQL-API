@@ -75,20 +75,7 @@
     },
     "logoutUser": {
       "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "practicegraphqlapijwtVerificationLayer"
-        }
-      ]
-    },
-    "practicegraphqlapijwtVerificationLayer": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer"
+      "dependsOn": []
     },
     "registerUser": {
       "build": true,
@@ -208,22 +195,6 @@
         {
           "category": "function",
           "resourceName": "logoutUser"
-        }
-      ]
-    },
-    "AMPLIFY_function_practicegraphqlapijwtVerificationLayer_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "practicegraphqlapijwtVerificationLayer"
-        }
-      ]
-    },
-    "AMPLIFY_function_practicegraphqlapijwtVerificationLayer_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "practicegraphqlapijwtVerificationLayer"
         }
       ]
     },

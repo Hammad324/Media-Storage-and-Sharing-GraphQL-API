@@ -102,11 +102,7 @@
         },
         "Runtime": "nodejs22.x",
         "Timeout": 25,
-        "Layers": [
-          {
-            "Ref": "functionpracticegraphqlapijwtVerificationLayerArn"
-          }
-        ]
+        "Layers": []
       }
     },
     "LambdaExecutionRole": {

@@ -39,9 +39,6 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     },
-    "practicegraphqlapijwtVerificationLayer": {
-      "Arn": "string"
-    },
     "registerUser": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
