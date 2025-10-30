@@ -37,7 +37,7 @@ exports.handler = async (event) => {
     await dynamoClient.send(
       new UpdateItemCommand({
         TableName: process.env.DDB_TABLE,
-        Key: { userId: { S: subId } },
+        Key: { id: { S: subId } },
         UpdateExpression: "SET isActive = :val, updatedAt = :updatedAt",
         ExpressionAttributeValues: {
           ":val": { BOOL: false },

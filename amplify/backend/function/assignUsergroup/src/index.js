@@ -25,12 +25,12 @@ exports.handler = async (event) => {
 
       try {
         const cognitoRes = await cognitoClient.send(command);
-        
+        console.log(cognitoRes)
         await dynamoClient.send(
           new PutItemCommand({
             TableName: process.env.DDB_TABLE,
             Item: {
-              userId: {S: event.userName},
+              id: {S: event.userName},
               username: {S: event.request.userAttributes.preferred_username || event.userName},
               email: {S: event.request.userAttributes.email},
               role: { S: "user" },

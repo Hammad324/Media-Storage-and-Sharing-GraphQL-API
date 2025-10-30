@@ -37,7 +37,7 @@ type RegisterResult @aws_api_key {
 }
 
 input LoginInput {
-  username: String!
+  email: String!
   password: String!
 }
 
@@ -74,4 +74,31 @@ type RotateTokensResult @aws_cognito_user_pools{
 
 type Query {
   _dummy: String
+}
+
+type User 
+  @model 
+  @auth(rules: [{ allow: owner, ownerField: "sub", operations: [read, update, delete] }]) {
+  id: ID!
+  username: String!
+  email: String!
+  role: String!
+  isActive: Boolean!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  files: [File] @hasMany(indexName: "byUser", fields: ["id"])
+}
+
+type File 
+  @model 
+  @auth(rules: [{ allow: owner, ownerField: "userId", operations: [read, update, delete] }]) {
+  id: ID!
+  userId: ID! @index(name: "byUser") # By this only the user can read it but not reassign anything.
+    @auth(rules: [
+      { allow: owner, ownerField: "userId", operations: [read] }
+    ])
+  filename: String!
+  fileUrl: String!
+  contentType: String
+  uploadedAt: AWSDateTime!
 }

@@ -48,7 +48,7 @@ exports.handler = async (event) => {
     const userData = await dynamoClient.send(
       new GetItemCommand({
         TableName: process.env.DDB_TABLE,
-        Key: { userId: { S: cognitoSubId } },
+        Key: { id: { S: cognitoSubId } },
         ProjectionExpression: "isActive",
       })
     );

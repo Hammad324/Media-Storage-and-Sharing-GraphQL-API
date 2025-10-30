@@ -19,13 +19,13 @@ exports.handler = async (event) => {
   try {
     console.log("Incoming event:", JSON.stringify(event, null, 2));
 
-    const { username, password } = event.arguments.input;
+    const { email, password } = event.arguments.input;
 
     const command = new InitiateAuthCommand({
       AuthFlow: "USER_PASSWORD_AUTH",
       ClientId: process.env.CLIENT_ID,
       AuthParameters: {
-        USERNAME: username,
+        USERNAME: email,
         PASSWORD: password,
       },
     });
@@ -40,7 +40,7 @@ exports.handler = async (event) => {
     await dynamoClient.send(
       new UpdateItemCommand({
         TableName: process.env.DDB_TABLE,
-        Key: { userId: { S: cognitoSub } },
+        Key: { id: { S: cognitoSub } },
         UpdateExpression: "SET isActive = :val, updatedAt = :updatedAt",
         ExpressionAttributeValues: {
           ":val": { BOOL: true },

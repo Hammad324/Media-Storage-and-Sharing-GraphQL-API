@@ -1,16 +1,16 @@
 {
   "environmentVariableList": [
     {
-      "cloudFormationParameterName": "ddbTable",
-      "environmentVariableName": "DDB_TABLE"
-    },
-    {
       "cloudFormationParameterName": "clientId",
       "environmentVariableName": "CLIENT_ID"
     },
     {
       "cloudFormationParameterName": "userPoolId",
       "environmentVariableName": "USER_POOL_ID"
+    },
+    {
+      "cloudFormationParameterName": "ddbTable",
+      "environmentVariableName": "DDB_TABLE"
     }
   ],
   "lambdaLayers": []

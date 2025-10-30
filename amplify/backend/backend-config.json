@@ -63,6 +63,11 @@
     }
   },
   "function": {
+    "addMediaDataToDynamo": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "assignUsergroup": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -94,6 +99,30 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_addMediaDataToDynamo_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "addMediaDataToDynamo"
+        }
+      ]
+    },
+    "AMPLIFY_function_addMediaDataToDynamo_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "addMediaDataToDynamo"
+        }
+      ]
+    },
+    "AMPLIFY_function_addMediaDataToDynamo_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "addMediaDataToDynamo"
+        }
+      ]
+    },
     "AMPLIFY_function_assignUsergroup_ddbTable": {
       "usedBy": [
         {

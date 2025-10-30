@@ -16,16 +16,6 @@
     "s3Key": {
       "Type": "String"
     },
-    "functionpracticegraphqlapijwtVerificationLayerArn": {
-      "Type": "String",
-      "Default": "functionpracticegraphqlapijwtVerificationLayerArn"
-    },
-    "clientId": {
-      "Type": "String"
-    },
-    "userPoolId": {
-      "Type": "String"
-    },
     "ddbTable": {
       "Type": "String"
     }
@@ -60,12 +50,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "logoutUser",
+            "addMediaDataToDynamo",
             {
               "Fn::Join": [
                 "",
                 [
-                  "logoutUser",
+                  "addMediaDataToDynamo",
                   "-",
                   {
                     "Ref": "env"
@@ -83,12 +73,6 @@
             "REGION": {
               "Ref": "AWS::Region"
             },
-            "CLIENT_ID": {
-              "Ref": "clientId"
-            },
-            "USER_POOL_ID": {
-              "Ref": "userPoolId"
-            },
             "DDB_TABLE": {
               "Ref": "ddbTable"
             }
@@ -101,8 +85,8 @@
           ]
         },
         "Runtime": "nodejs22.x",
-        "Timeout": 25,
-        "Layers": []
+        "Layers": [],
+        "Timeout": 25
       }
     },
     "LambdaExecutionRole": {
@@ -111,12 +95,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "practicegraphqlapiLambdaRolebae7724b",
+            "practicegraphqlapiLambdaRole52167187",
             {
               "Fn::Join": [
                 "",
                 [
-                  "practicegraphqlapiLambdaRolebae7724b",
+                  "practicegraphqlapiLambdaRole52167187",
                   "-",
                   {
                     "Ref": "env"

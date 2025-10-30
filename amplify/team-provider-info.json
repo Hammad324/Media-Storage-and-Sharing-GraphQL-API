@@ -25,34 +25,39 @@
         },
         "loginUser": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/loginUser-4d626d61466841346b62-build.zip",
+          "s3Key": "amplify-builds/loginUser-694132334663374d7647-build.zip",
           "userPoolId": "ap-south-1_IlJBF0QdL",
           "clientId": "7nvmj1alattaeo5i5fb5g7ff7c",
           "ddbTable": "practicegraphqlapi_table"
         },
         "logoutUser": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/logoutUser-52792b34666249642b73-build.zip",
-          "ddbTable": "practicegraphqlapi_table",
+          "s3Key": "amplify-builds/logoutUser-6a71506f6241346e3630-build.zip",
           "clientId": "7nvmj1alattaeo5i5fb5g7ff7c",
-          "userPoolId": "ap-south-1_IlJBF0QdL"
+          "userPoolId": "ap-south-1_IlJBF0QdL",
+          "ddbTable": "User-izpp4kweb5ebnptpmxva4oaxzi-dev"
         },
         "uploadImageOnS3": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/uploadImageOnS3-787a6237523965747441-build.zip",
+          "s3Key": "amplify-builds/uploadImageOnS3-6d6a4f6c2b58524f5a6d-build.zip",
           "bucketName": "practicegraphqlapi-imagebucket",
-          "ddbTable": "practicegraphqlapi_table"
+          "ddbTable": "User-izpp4kweb5ebnptpmxva4oaxzi-dev"
         },
         "assignUsergroup": {
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/assignUsergroup-76614747585336317763-build.zip",
-          "ddbTable": "practicegraphqlapi_table"
+          "s3Key": "amplify-builds/assignUsergroup-4c6c426f415445653367-build.zip",
+          "ddbTable": "User-izpp4kweb5ebnptpmxva4oaxzi-dev"
         },
         "rotateAllTokens": {
-          "clientId": "7nvmj1alattaeo5i5fb5g7ff7c",
-          "ddbTable": "practicegraphqlapi_table",
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/rotateAllTokens-48627a5a7a6f45613232-build.zip"
+          "s3Key": "amplify-builds/rotateAllTokens-417356654c702b524154-build.zip",
+          "clientId": "7nvmj1alattaeo5i5fb5g7ff7c",
+          "ddbTable": "User-izpp4kweb5ebnptpmxva4oaxzi-dev"
+        },
+        "addMediaDataToDynamo": {
+          "ddbTable": "File-izpp4kweb5ebnptpmxva4oaxzi-dev",
+          "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
+          "s3Key": "amplify-builds/addMediaDataToDynamo-34756c55387563367741-build.zip"
         }
       },
       "api": {
