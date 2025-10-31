@@ -55,9 +55,10 @@
           "ddbTable": "User-izpp4kweb5ebnptpmxva4oaxzi-dev"
         },
         "addMediaDataToDynamo": {
-          "ddbTable": "File-izpp4kweb5ebnptpmxva4oaxzi-dev",
           "deploymentBucketName": "amplify-practicegraphqlapi-dev-04184-deployment",
-          "s3Key": "amplify-builds/addMediaDataToDynamo-34756c55387563367741-build.zip"
+          "s3Key": "amplify-builds/addMediaDataToDynamo-76585743667773536251-build.zip",
+          "ddbTable": "File-izpp4kweb5ebnptpmxva4oaxzi-dev",
+          "userTable": "User-izpp4kweb5ebnptpmxva4oaxzi-dev"
         }
       },
       "api": {

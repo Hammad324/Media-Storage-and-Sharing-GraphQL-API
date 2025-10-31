@@ -123,6 +123,14 @@
         }
       ]
     },
+    "AMPLIFY_function_addMediaDataToDynamo_userTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "addMediaDataToDynamo"
+        }
+      ]
+    },
     "AMPLIFY_function_assignUsergroup_ddbTable": {
       "usedBy": [
         {

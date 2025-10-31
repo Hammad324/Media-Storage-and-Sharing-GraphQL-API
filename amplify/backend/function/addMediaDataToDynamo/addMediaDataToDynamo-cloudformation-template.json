@@ -18,6 +18,9 @@
     },
     "ddbTable": {
       "Type": "String"
+    },
+    "userTable": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -75,6 +78,9 @@
             },
             "DDB_TABLE": {
               "Ref": "ddbTable"
+            },
+            "USER_TABLE": {
+              "Ref": "userTable"
             }
           }
         },

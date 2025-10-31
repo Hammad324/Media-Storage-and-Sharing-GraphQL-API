@@ -4,6 +4,10 @@
     {
       "cloudFormationParameterName": "ddbTable",
       "environmentVariableName": "DDB_TABLE"
+    },
+    {
+      "cloudFormationParameterName": "userTable",
+      "environmentVariableName": "USER_TABLE"
     }
   ]
 }
